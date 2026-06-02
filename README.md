@@ -1,3 +1,78 @@
+<!-- bettergithub:generated-readme -->
+# Concurrent Robotics Framework
+
+Concurrent Robotics Framework is a Java microservice simulation for robotic perception, sensor events, and map fusion. It helps reviewers inspect thread coordination, callbacks, a message bus, camera and LiDAR services, GPS/IMU pose handling, and a Maven test suite around the core concurrency and SLAM-inspired domain logic.
+
+## Tech Stack
+
+- Java
+- Maven
+- JUnit
+- Concurrency
+- Microservices
+- GitHub Actions
+
+## Quick Start
+
+```bash
+mvn test
+mvn package
+Run the application entry point with a local JSON input file.
+```
+
+## Usage
+
+- Review the message bus and service classes first.
+- Inspect tests under src/test/java.
+- Use the docs to understand sensor and fusion responsibilities.
+
+## Environment Variables
+
+No .env file or API key is required. Java and Maven are the expected local configuration.
+
+## Demo and Screenshots
+
+![Concurrent Robotics Framework repo walkthrough](docs/repo-health-overview.svg)
+
+The diagram above is a lightweight walkthrough image for GitHub reviewers. It shows the reviewer path, the implementation areas to inspect, and the evidence this repository provides. For non-web course projects, this replaces a live demo with reproducible local setup and manual verification notes.
+
+## Testing and Quality
+
+Testing is documented even when the original assignment uses manual verification instead of a full automated suite.
+
+```bash
+mvn test
+```
+
+See [docs/test-plan.md](docs/test-plan.md) for the manual or automated checks that should be used before presenting this repository.
+
+## Repository Structure
+
+- `src/main/java`
+- `src/test/java`
+- `pom.xml`
+- `docs`
+
+## Architecture Notes
+
+The framework separates message types, services, application objects, and tests. The docs describe how concurrency flow and sensor data fusion are intended to be reviewed.
+
+See [docs/architecture.md](docs/architecture.md) for a more detailed reviewer map.
+
+## Recruiter Notes
+
+- The README opens with the project purpose, audience, and result so the repository is scannable.
+- Setup, environment, usage, testing, and architecture notes are collected in predictable sections.
+- Existing source code was not changed by the documentation polish pass.
+
+## Roadmap
+
+- Add a short result screenshot or terminal capture after the project is rerun locally.
+- Add one small automated smoke test if the course/tooling environment makes it practical.
+- Keep the README aligned with the latest verified run command.
+
+## Existing Project Notes
+
 📍 Concurrent Robotics Framework — Java (Microservices + Sensors + SLAM)
 
 This project implements a concurrent Java-based microservice framework that simulates the perception and mapping pipeline of an autonomous vacuum-mop robot. Multiple sensor services—Camera, LiDAR, GPS, and IMU—run in parallel and synchronize using threads, locks, callbacks, and Java 8 concurrency utilities. The system fuses sensor outputs to produce a simplified SLAM-like mapping process.
@@ -94,3 +169,4 @@ Coordinate independent services with shared state
 Prototype robotics processing pipelines without ROS
 
 Gain hands-on experience with SLAM-style data fusion
+
